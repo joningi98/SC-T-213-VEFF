@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/submitEval.php" method="post">
+    <fieldset>
+        <legend>Personal information:</legend>
+        <label for="first_name">First name: <input id="first_name" type="text"></label><br>
+        <label for="last_name">Last name: <input id="last_name" type="text"></label><br>
+        <label for="SSN">Social Security Number: <input id="SSN" type="text"></label><br>
+        Gender:<br>
+        <label><input type="radio" name="gender" value="male"></label> Male<br>
+        <label><input type="radio" name="gender" value="female"></label> Female<br>
+        <label><input type="radio" name="gender" value="other"></label> Other<br>
+    </fieldset>
+    <fieldset>
+        <legend>Course context:</legend>
+        <label for="university">University: <input id="university" type="text" value="RU"></label><br>
+        <label for="school">
+            School:
+            <select id="school">
+                <option value="computer science">Computer Science</option>
+            </select>
+        </label>
+        <br>
+        <label for="course">Course: <input id="course" type="text" value="T-213-VEFF"><br></label>
+    </fieldset>
+    <fieldset>
+        <legend>Which lectures did you attend?</legend>
+        <label><input type="checkbox" name="l1:introduction" value="l1"> L1: Introduction</label><br>
+        <label><input type="checkbox" name="l2:networks" value="l1"> L2: Networks</label><br>
+        <label><input type="checkbox" name="l3:html i" value="l1"> L3: HTML I</label><br>
+    </fieldset>
+    <fieldset>
+        <legend>Please describe your overall impression of the course</legend>
+        <label><textarea cols="50" rows="10">My impression of this course is</textarea></label>
+    </fieldset>
+</form>
+<input type="submit" value="Submit evaluation">
+</body>
+</html>
