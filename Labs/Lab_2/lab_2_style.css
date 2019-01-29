@@ -1,4 +1,64 @@
 .blocklink{
-    background-color: lightgray;
+    background-color: 	#ADADAD;
+    color: white;
+    text-decoration: none;
+    padding: 4px;
+}
 
+.blocklink:hover{
+    background-color: gray;
+}
+
+
+ul{
+    list-style-type: lower-greek;
+    background-color: #DDDDDD;
+    width: 350px;
+    border-left: 3px solid #1AA5B2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+header{
+    background-color: #DDDDDD;
+    width: 80%;
+    text-align: center;
+    border-style: dotted;
+    border-radius: 15px;
+    margin: auto;
+}
+
+th{
+    background-color: #1AA5B2;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #ADADAD;
+    padding-left: 5px;
+    font-weight: normal;
+}
+
+td{
+    border-bottom: 3px solid #ADADAD;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+table{
+    border-collapse: collapse;
+    margin: auto;
+    width: 45%;
+    text-align: left;
+    box-shadow: 10px 10px #ADADAD;
+}
+
+table:hover{
+    opacity: 0.5
+}
+
+.item{
+    font-weight: bold;
 }
