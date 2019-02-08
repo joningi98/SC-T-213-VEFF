@@ -1,0 +1,45 @@
+var carName = "Volvo"
+
+function myFunction(){
+    var licensePlate = "ABC123"
+
+    x = "5";
+}
+
+if (carName === "Volvo"){
+    var temp = 42;
+}
+
+
+## Callback ##
+
+function doA(callback) {
+    // do something
+    callback();
+}
+
+setTimeout( function(){
+    console.log(1);
+}, 500);
+console.log(2);
+
+function doHTTPReq (callback){
+    // our request
+    callback(res)
+
+}
+
+doHTTPReq ( function(){
+    console.log(res.body;
+}
+
+## Asynchronicity ##
+
+function log(){
+
+    setTimeout(function cb(){
+        console.log('1');{
+        ,0);
+    console.log('2');
+}
+log();

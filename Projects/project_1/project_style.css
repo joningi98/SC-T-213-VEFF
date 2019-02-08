@@ -1,0 +1,147 @@
+body{
+    font-family: Arsenal, serif;
+}
+img{
+    max-width: 100%;
+}
+
+.menu{
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hamburger{
+    display: none;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: stretch;
+    margin: 0 auto;
+}
+
+.image{
+    margin: 20px auto;
+    display: block;
+    float: left;
+    flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    max-width: 32.8%;
+    background-color: #D1D4C3;
+    border: 3px solid black;
+}
+
+.button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.image div{
+    text-align: center;
+}
+
+.header{
+    text-align: center;
+    border-radius: 15px;
+    margin: 20px auto;
+    height: 60px;
+    width: 65%;
+    background-color: #D1D4C3;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header .right{
+    margin: auto;
+    font-size: 20px;
+}
+
+.header div{
+    padding-top: 10px;
+    font-size: 30px;
+    min-width: 33%;
+}
+
+.header div a{
+    color: black;
+}
+
+.info_box{
+    max-width: 1200px;
+    margin: auto;
+    background-color: #D1D4C3;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.info_box .about {
+    padding: 30px;
+    float: left;
+    max-width: 25%;
+}
+
+.info_box .imprint{
+    float: right;
+    padding: 30px;
+    max-width: 25%;
+}
+
+.imprint p{
+    text-align: right;
+}
+
+@media only screen and (max-width: 1200px) {
+    .image{
+        max-width: 47%;
+    }
+    .info_box{
+        width: 47%;
+    }
+
+}
+
+
+@media only screen and (max-width: 850px) {
+    .image {
+        max-width: 100%;
+    }
+
+    .header .left{
+        display: none;
+    }
+    .header .mid{
+        display: none;
+    }
+    .header .right{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .hamburger a{
+        color: #000000;
+        text-decoration: none;
+        font-size: 35px;
+    }
+
+    .row div{
+        width: 100%;
+    }
+
+}
