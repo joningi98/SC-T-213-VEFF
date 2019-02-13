@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="929a010c-4e5c-44a6-b534-8311c7853612" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Classes/class_8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Lab_3/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Labs/Lab_3/lab03.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/chicken.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/fish.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/images/license_images.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/images/page_1201px.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/images/page_850px.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/images/page_851px.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/paella.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/project_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/project_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/salad.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/sausages.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projects/project_1/soup.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Jón_Ingi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Jón_Ingi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Labs/Lab_3/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Labs/Lab_3/app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,55 +15,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Projects/project_1/project_1.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-                  <folding>
-                    <element signature="e#697#704#1" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Labs/Lab_1/forms.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="184">
-                  <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Projects/project_1/project_style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
-                  <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Projects/project_1/project_style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Labs/Lab_3/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Labs/Lab_3/lab03.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1702">
+              <caret line="74" column="80" selection-start-line="74" selection-start-column="71" selection-end-line="74" selection-end-column="80" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -107,9 +66,9 @@
         <option value="$PROJECT_DIR$/Labs/Lab_1/forms.html" />
         <option value="$PROJECT_DIR$/Classes/class_8.html" />
         <option value="$PROJECT_DIR$/Classes/class_8" />
-        <option value="$PROJECT_DIR$/Labs/Lab_3/app.js" />
         <option value="$PROJECT_DIR$/Projects/project_1/project_1.html" />
         <option value="$PROJECT_DIR$/Projects/project_1/project_style.css" />
+        <option value="$PROJECT_DIR$/Labs/Lab_3/app.js" />
       </list>
     </option>
   </component>
@@ -127,6 +86,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -143,24 +103,12 @@
               <item name="SC-T-213-VEFF" type="b2602c69:ProjectViewProjectNode" />
               <item name="SC-T-213-VEFF" type="462c0819:PsiDirectoryNode" />
               <item name="Labs" type="462c0819:PsiDirectoryNode" />
-              <item name="Lab_1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SC-T-213-VEFF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SC-T-213-VEFF" type="462c0819:PsiDirectoryNode" />
-              <item name="Projects" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SC-T-213-VEFF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SC-T-213-VEFF" type="462c0819:PsiDirectoryNode" />
-              <item name="Projects" type="462c0819:PsiDirectoryNode" />
-              <item name="project_1" type="462c0819:PsiDirectoryNode" />
+              <item name="Lab_3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,18 +168,24 @@
       <workItem from="1549034138879" duration="154000" />
       <workItem from="1549290089936" duration="2742000" />
       <workItem from="1549494092655" duration="1363000" />
-      <workItem from="1549539940597" duration="37012000" />
+      <workItem from="1549539940597" duration="37120000" />
+      <workItem from="1549822864419" duration="465000" />
+      <workItem from="1549910084345" duration="1677000" />
+      <workItem from="1549912951048" duration="38000" />
+      <workItem from="1549975864512" duration="1232000" />
+      <workItem from="1549977324338" duration="125000" />
+      <workItem from="1549989661193" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57057000" />
+    <option name="totallyTimeSpent" value="60705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.13593256" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13593256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -279,23 +233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Labs/Lab_3/lab03.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="60" column="109" lean-forward="true" selection-start-line="60" selection-start-column="109" selection-end-line="60" selection-end-column="109" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Labs/Lab_3/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Labs/Lab_2/httpIntro.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -313,6 +250,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/project_1/project_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Labs/Lab_1/forms.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -327,12 +271,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/project_1/project_1.html">
+    <entry file="file://$PROJECT_DIR$/Labs/Lab_3/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="243">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Labs/Lab_3/lab03.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1702">
+          <caret line="74" column="80" selection-start-line="74" selection-start-column="71" selection-end-line="74" selection-end-column="80" />
           <folding>
-            <element signature="e#697#704#1" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
