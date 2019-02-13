@@ -4,6 +4,14 @@ function load_nums() {
     document.getElementById('mathIn').value = '';
     var number_one = Math.floor((Math.random() * 10) + 1);
     var number_two = Math.floor((Math.random() * 10) + 1);
+    if (number_one < number_two){
+        var temp1 = number_one;
+        var temp2 = number_two;
+        number_one = temp2;
+        number_two = temp1;
+    }
+    console.log(number_one);
+    console.log(number_two);
     var my_list =  ['-','+','*'];
     var my_element = my_list[Math.floor((Math.random() * 3))];
     document.getElementById('taskMsg').innerHTML = 'Calculate' +' '+ number_one +' '+ my_element +' '+ number_two;
@@ -24,8 +32,8 @@ function evaluateResult() {
     console.log(answer);
     if (my_result == answer){
         console.log('Correct');
-        box.classList.add('alert-success');
         box.style.display = 'block';
+        box.classList.add('alert-success');
         box.innerHTML = 'Correct';
     }
     else{
