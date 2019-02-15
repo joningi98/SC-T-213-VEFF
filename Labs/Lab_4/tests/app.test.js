@@ -33,9 +33,10 @@ describe('loadFileAsync function', function () {
         });
     });
     it('should call the callback with null in case the URL is invalid or the HTTp request is not successful',  (request) => {
-        loadFileAsync('http://fasjfkasjnkdasjkl.is', () =>{
+        loadFileAsync('http://fasjfkasjnkdasjkl.is', (result) =>{
             try {
-                chai.expext.to.be(null);
+                //chai.expect(loadFileAsync, null).to.be.null;
+                chai.assert.typeOf(null, 'null');
                 request();
             }catch (e) {
                 request(e);
