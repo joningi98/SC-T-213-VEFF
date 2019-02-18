@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Testing JavaScript</title>
+    <meta charset="UTF-8">
+    <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="mocha" style="border: 2px solid black;"></div>
+
+                <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+                <script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
+
+                <script>mocha.setup('bdd')</script>
+                <script src="array.js"></script>
+                <script src="array.test.js"></script>
+                
+                <script>
+                    mocha.run();
+                </script>
+
+</body>
+
+</html>
