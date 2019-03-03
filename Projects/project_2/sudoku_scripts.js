@@ -1,6 +1,6 @@
 function get_sudoku() {
     //Prepare the parameter value for 'myParam'
-    var paramValue = document.getElementById('newGameButton');
+    var paramValue = document.getElementById('difficulty');
     var strUser = paramValue.options[paramValue.selectedIndex].value;
 
     console.log(strUser);
@@ -8,16 +8,15 @@ function get_sudoku() {
     //The URL to which we will send the request
     var url = 'https://veff213-sudoku.herokuapp.com/api/v1/sudoku';
 
-    my_array = [];
     //Perform an AJAX POST request to the url, and set the param 'myParam' in the request body to paramValue
-    axios.post(url, {difficulty: paramValue})
+    axios.post(url, {difficulty: strUser})
         .then(function (response) {
             //When successful, print 'Success: ' and the received data
             console.log("Success: ", response.data);
-            new_arr = response.data;
+            sudoku_array = response.data.board.boxes;
 
-            console.log(new_arr.board.boxes);
-            make_table.call(9,9)
+            console.log(sudoku_array);
+            generateGrid.call(sudoku_array)
         })
         .catch(function (error) {
             //When unsuccessful, print the error.
@@ -28,19 +27,18 @@ function get_sudoku() {
         });
 }
 
-function make_table( rows, cols, callback ){
-    var i=0;
-    var grid = document.createElement('table');
-    grid.className = 'grid';
-    for (var r=0;r<rows;++r){
-        var tr = grid.appendChild(document.createElement('tr'));
-        for (var c=0;c<cols;++c){
-            var cell = tr.appendChild(document.createElement('td'));
-            cell.innerHTML = ++i;
-            cell.addEventListener('click',(function(el,r,c,i){
-                return function(){ callback(el,r,c,i); }
-            })(cell,r,c,i),false);
+function generateGrid(grid_data) {
+    document.write('<div></div>');
+    console.log(grid_data);
+    for( var x=0; x <= 9; x++ ) {
+        document.write('<div></div>');
+        for (var y = 0; y <= 9; y++) {
+            console.log(x, y);
+            console.log(grid_data[x][y]);
+            document.write('<input type="text" name="your_name" value=gird_data[x][y] disabled/>');
         }
+        // end the current row
+        document.write('</tr>');
+        document.write('</table>');
     }
-    return grid;
 }
