@@ -15,8 +15,8 @@ function get_sudoku() {
             console.log("Success: ", response.data);
             sudoku_array = response.data.board.boxes;
 
-            console.log(sudoku_array);
-            generateGrid.call(sudoku_array)
+           // console.log(sudoku_array);
+            generateGrid(sudoku_array)
         })
         .catch(function (error) {
             //When unsuccessful, print the error.
@@ -30,12 +30,17 @@ function get_sudoku() {
 function generateGrid(grid_data) {
     document.write('<div></div>');
     console.log(grid_data);
-    for( var x=0; x <= 9; x++ ) {
+    for( var x=0; x <= 8; x++ ) {
         document.write('<div></div>');
-        for (var y = 0; y <= 9; y++) {
-            console.log(x, y);
-            console.log(grid_data[x][y]);
-            document.write('<input type="text" name="your_name" value=gird_data[x][y] disabled/>');
+        for (var y = 0; y <= 8; y++) {
+            var grid_num = grid_data[x][y];
+            console.log(grid_num, x,y);
+            if (grid_data[x][y] == "."){
+                document.write('<input type="text" name="your_name" value="" />');
+            }
+            else {
+                document.write('<input type="text" name="your_name" value="<? echo $grid_num ?>" />');
+            }
         }
         // end the current row
         document.write('</tr>');
