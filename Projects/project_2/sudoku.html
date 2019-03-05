@@ -1,28 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <script src="sudoku_style_sheet.css"></script>
-    <script src="sudoku_scripts.js"></script>
+    <title>Axios example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- We need to import Axios in order to be able to use the axios object below -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <title>HTML Sudoku Board</title>
+
 </head>
+
 <body>
-<div class="gameControlSet">
-    <input id="newGameButton" type="submit" value="NEW GAME" class="gameControls" onclick="get_sudoku()">
-    <br>
-    <label>
-        Level:
-    </label>&nbsp;&nbsp;
-    <select id="difficulty">
-        <option value="easy" selected="">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-    </select>
-</div>
 <div class="container">
-    <h1>HTML Sudoku Board</h1>
+    <button type="button" class="btn" id="generateButton" onclick="doAjax()">Generate Sudoku</button>
+    <div class="row">
+        <div id="diff"></div>
+        <p id="sudokuId"></p>
+    </div>
+    <button id="validateButton" class="btn" onclick="validate()">Validate</button>
+    <table id="board">
+        <tr>
+            <th>
+                <input type="number" id="cell00" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell01" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell02" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell10" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell11" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell12" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell20" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell21" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell22" min="1" max="9"></th>
+        </tr>
+        <tr>
+
+            <th>
+                <input type="number" id="cell03" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell04" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell05" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell13" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell14" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell15" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell23" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell24" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell25" min="1" max="9"></th>
+        </tr>
+
+        <tr>
+            <th>
+                <input type="number" id="cell06" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell07" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell08" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell16" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell17" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell18" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell26" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell27" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell28" min="1" max="9"></th>
+        </tr>
+
+        <tr>
+            <th>
+                <input type="number" id="cell30" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell31" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell32" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell40" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell41" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell42" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell50" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell51" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell52" min="1" max="9"></th>
+        </tr>
+        <tr>
+
+            <th>
+                <input type="number" id="cell33" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell34" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell35" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell43" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell44" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell45" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell53" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell54" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell55" min="1" max="9"></th>
+        </tr>
+        <tr>
+
+            <th>
+                <input type="number" id="cell36" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell37" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell38" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell46" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell47" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell48" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell56" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell57" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell58" min="1" max="9"></th>
+        </tr>
+        <tr>
+
+            <th>
+                <input type="number" id="cell60" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell61" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell62" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell70" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell71" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell72" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell80" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell81" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell82" min="1" max="9"></th>
+        </tr>
+        <tr>
+
+
+            <th>
+                <input type="number" id="cell63" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell64" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell65" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell73" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell74" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell75" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell83" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell84" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell85" min="1" max="9"></th>
+        </tr>
+        <tr>
+
+            <th>
+                <input type="number" id="cell66" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell67" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell68" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell76" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell77" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell78" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell86" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell87" min="1" max="9"></th>
+            <th>
+                <input type="number" id="cell88" min="1" max="9"></th>
+        </tr>
+
+    </table>
+    <div id="resultMsg" class="alert alert-success" role="alert">
+        Correct!
+    </div>
 </div>
+<script src="js/app.js"></script>
+
 </body>
 </html>

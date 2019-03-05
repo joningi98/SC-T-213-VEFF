@@ -1,0 +1,44 @@
+#sudokuId{
+    display: none
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th{
+    border: 1px solid black;
+}
+
+th {
+    border: 1px solid black;
+}
+
+th:nth-child(3) {
+    border-right: 3px solid black;
+}
+
+th:nth-child(6) {
+    border-right: 3px solid black;
+}
+tr:nth-child(3){
+    border-bottom: 3px solid black;
+}
+tr:nth-child(6){
+    border-bottom: 3px solid black;
+}
+
+input{
+    padding: 0;
+    border: 0;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    outline: none;
+    margin: 0;
+}
+
+#resultMsg{
+    display: none;
+}
