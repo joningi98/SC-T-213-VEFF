@@ -1,0 +1,12 @@
+{
+  "name": "lab_5",
+  "version": "1.0.0",
+  "description": "lab 5",
+  "main": "mathUser.js",
+  "scripts": {
+    "start": "node mathUser.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jón Ingi",
+  "license": "ISC"
+}
