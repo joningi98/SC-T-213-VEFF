@@ -5,22 +5,19 @@ const math = require('./math');
 
 var s = http.createServer();
 s.on('request', function(request, response) {
-    response.writeHead(200);
+    response.setHeader('Content-Type', 'text/plain');
     let res_url = url.parse(request.url, true);
-    if (request.method === 'GET' && res_url.pathname === '/divide'){
-        response.statusCode = 200;
+    if (request.method === 'GET' && res_url.pathname === '/divide' && Number(res_url.query.a) && Number(res_url.query.b)){
+        response.writeHead(200);
         var url_data = res_url.query;
         var a = url_data.a;
         var b = url_data.b;
-        console.log(math.stringifyDivision(a,b))
+        response.write(math.stringifyDivision(a,b))
     }
     else{
-        response.statusCode = 405;
-        response.send('This operation is not supported')
+        response.writeHead(405);
+        response.write('This operation is not supported')
     }
-   // console.log(request.headers);
-    // console.log(request.url);
-   // response.write(math.doDivition(4,2));
     response.end();
 });
 
