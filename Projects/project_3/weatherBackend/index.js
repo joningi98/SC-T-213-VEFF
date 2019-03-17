@@ -168,14 +168,35 @@ app.put('/api/v1/stations/:id', (req, res) => {
 Read all observations for a station
 Returns an array of all observations (with all attributes) for a specified station.
  */
-app.get('/api/v1/observations', (req, res) => {
+app.get('/api/v1/stations/:stationId/observations', (req, res) => {
     let ret_observations = [];
-    for (let i = 0; i < observations.length; i++){
-        ret_observations.push({"id": observations[i].id, "date": observations[i].date, "temp": observations[i].temp,
-            "windSpeed": observations[i].windSpeed, "windDir": observations[i].windDir, "prec": observations[i].prec,
-            "hum": observations[i].hum})
+    for (let i = 0; i < stations.length; i++) {
+        if (stations[i].id === Number(req.params.stationId)){
+            if (stations[i].observations.length > 0){
+                for (let j = 0; j < stations[i].observations.length; j++){
+                    for (let k = 0; k < observations.length; k++){
+                        if (stations[i].observations[j] === observations[k].id){
+                            ret_observations.push({
+                                "id": observations[k].id,
+                                "date": observations[k].date,
+                                "temp": observations[k].temp,
+                                "windSpeed": observations[k].windSpeed,
+                                "windDir": observations[k].windDir,
+                                "prec": observations[k].prec,
+                                "hum": observations[k].hum
+                            });
+                        }
+                    }
+                    res.status(200).json(ret_observations);
+                    return;
+                }
+            }
+            else{
+                res.status(400).json({"message": "This station has no observations"});
+            }
+        }
     }
-    res.status(200).json(ret_observations);
+    res.status(404).json({"message": "There exists not station with id: " + req.params.stationId});
 });
 
 
@@ -186,15 +207,20 @@ Returns all attributes of a specified observation (for a station).
 app.get('/api/v1/stations/:stationId/observations/:observationId', (req, res) => {
     for (let i = 0; i < stations.length; i ++){
         if (stations[i].id === Number(req.params.stationId)){
-            for (let j = 0; j < observations.length; j++){
-                if (observations[j].id === Number(req.params.observationId)){
-                    res.status(200).json(observations[j]);
-                    return;
+            for (let j = 0; j < stations[i].observations.length; j++){
+                if (stations[i].observations[j] === Number(req.params.observationId)){
+                    for (let k = 0; k < observations.length; k++){
+                        if (stations[i].observations[j] === observations[k].id){
+                            res.status(200).json(observations[k]);
+                            return;
+                        }
+                    }
                 }
             }
+            res.status(404).json({"message": "Observation with id: "+ req.params.observationId + " does not exist"})
         }
     }
-    res.status(404).json({"message": "Observation with id:" + req.params.id + " does not exist."})
+    res.status(404).json({"message": "Station with id:" + req.params.id + " does not exist."})
 });
 
 
@@ -207,30 +233,64 @@ including id and date).
  */
 
 app.put('/api/v1/stations/:stationId/observations', (req, res) => {
-    let ts = Math.round((new Date()).getTime() / 1000);
-    if (req.body.temp === undefined || req.body.windSpeed === undefined || req.body.windDir === undefined || req.body.prec === undefined || req.body.hum === undefined){
-        res.statusCode(400).json({"message" : "Something is missing!"})
-    }
-    else{
-        let last_id = 0;
-        if (stations.length > 0){
-            last_id = stations[stations.length - 1].id;
+    for (let i = 0; i < stations.length; i++) {
+        if (stations[i].id === Number(req.params.stationId)) {
+            if (req.body.temp === undefined || req.body.windSpeed === undefined || req.body.windDir === undefined || req.body.prec === undefined || req.body.hum === undefined) {
+                res.statusCode(400).json({"message": "Something is missing!"})
+            } else {
+                let last_id = 0;
+                if (stations.length > 0) {
+                    last_id = stations[stations.length - 1].id;
+                }
+                if (Number(req.body.lat) >= -90 && Number(req.body.lat) <= 90 && Number(req.body.lon) >= -180 && Number(req.body.lon) <= 180) {
+                    last_id++;
+                    let ts = Math.round((new Date()).getTime() / 1000);
+                    let new_obs = {
+                        id: last_id, date: ts, temp: req.params.temp, windSpeed: req.params.windSpeed, windDir:
+                        req.params.windDir, prec: req.params.prec, hum: req.params.hum
+                    };
+                    stations[i].observations.push(last_id);
+                    observations.push(new_obs);
+                    res.status(201).json(new_obs);
+                    return;
+                } else {
+                    res.status(405).json({'message': 'Latitudes not in range between -90 and 90 or longitudes not in range between -180 and 180'})
+                }
+            }
         }
-        if (Number(req.body.lat) >= -90 && Number(req.body.lat) <= 90 && Number(req.body.lon) >= -180 && Number(req.body.lon) <= 180 ) {
-            last_id++;
-            let new_obs = {
-                id: last_id, date: ts, temp: req.params.temp, windSpeed: req.params.windSpeed, windDir:
-                req.params.windDir, prec: req.params.prec, hum: req.params.hum
-            };
-            stations.observations.push(last_id);
-            observations.push(new_obs);
-            res.status(201).json(new_obs);
-        }
-        else{
-            res.status(405).json({'message': 'Latitudes not in range between -90 and 90 or longitudes not in range between -180 and 180'})
-        }
+        res.status(404).json({"message": "Station with id: " + req.params.stationId + " does not exist."})
     }
 });
+
+
+
+/*
+Delete an observation
+Deletes an existing observation for a specified station. The request, if successful, returns all attributes of the deleted observation
+ */
+app.delete('/api/v1/stations/:stationId/observations/:observationId', (req, res) => {
+    for (let i = 0; i < stations.length; i++) {
+        if (stations[i].id === Number(req.params.stationId)) {
+            for (let j = 0; j < stations[i].observations.length; j++) {
+                if (stations[i].observations[j] === Number(req.params.observationId)) {
+                    for (let k = 0; k < observations.length; k++) {
+                        if (stations[i].observations[j] === observations[k].id){
+                            let ret_obs = observations[k];
+                            observations.splice(k-1, 1);
+                            stations[i].observations.splice(j-1,1);
+                            res.status(200).json(ret_obs);
+                            return;
+                        }
+                    }
+                }
+                res.status(404).json({"message": "There is no station with id: " + req.params.observationId});
+            }
+        }
+        res.status(404).json({"message": "There is not station with id: " + req.params.stationId});
+    }
+});
+
+
 
 
 /**
