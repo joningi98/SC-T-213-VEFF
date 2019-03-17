@@ -292,6 +292,40 @@ app.delete('/api/v1/stations/:stationId/observations/:observationId', (req, res)
 
 
 
+/*
+. Delete all observations for a station
+Deletes all existing observations for a specified station. The request, if successful, returns all deleted
+observations (all attributes).
+ */
+app.delete('/api/v1/stations/:stationId/observations', (req, res) => {
+   for (let i = 0; stations.length; i++){
+       if (stations[i].id === Number(req.params.stationId)){
+           let ret_obs = [];
+           for (let j = 0; j < stations[i].observations.length; j++){
+                for (let k = 0; k < observations.length; k++){
+                    if (stations[i].observations[j] === observations[k].id){
+                        ret_obs.push({
+                            "id": observations[k].id,
+                            "date": observations[k].date,
+                            "temp": observations[k].temp,
+                            "windSpeed": observations[k].windSpeed,
+                            "windDir": observations[k].windDir,
+                            "prec": observations[k].prec,
+                            "hum": observations[k].hum
+                        });
+                        observations.splice(k-1, 1);
+                    }
+                }
+                stations[i].observations = [];
+               res.status(200).json(ret_obs);
+               return;
+           }
+       }
+   }
+    res.status(404).json({"message": "Station with id: " + req.params.stationId + " does not exist"})
+
+});
+
 
 /**
  * Handles incorrect url requests!
